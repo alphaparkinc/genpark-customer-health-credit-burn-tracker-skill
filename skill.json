@@ -1,0 +1,55 @@
+{
+  "name": "genpark-customer-health-credit-burn-tracker-skill",
+  "version": "1.0.0",
+  "description": "GenPark AI Agent Skill - Real-time prepaid credit burn velocity tracker calculating runway days, health scores, and upsell trigger thresholds inspired by Metronome customer health monitoring.",
+  "homepage": "https://genpark.ai/mcp",
+  "author": "alphaparkinc",
+  "category": "revenue-intelligence",
+  "tags": [
+    "credit-monitoring",
+    "customer-health",
+    "burn-rate-tracker",
+    "upsell-trigger",
+    "usage-based-billing"
+  ],
+  "inputs": {
+    "customer_id": {
+      "type": "string",
+      "default": "cust_fly_io_prod_007"
+    },
+    "total_credits_purchased_usd": {
+      "type": "number",
+      "default": 10000.0
+    },
+    "credits_consumed_to_date_usd": {
+      "type": "number",
+      "default": 7820.0
+    },
+    "days_elapsed_in_period": {
+      "type": "integer",
+      "default": 22
+    }
+  },
+  "outputs": {
+    "tracking_id": {
+      "type": "string"
+    },
+    "credits_remaining_usd": {
+      "type": "number"
+    },
+    "weighted_daily_burn_rate_usd": {
+      "type": "number"
+    },
+    "projected_runway_days": {
+      "type": "number"
+    },
+    "customer_health_score": {
+      "type": "number"
+    },
+    "upsell_trigger_fired": {
+      "type": "boolean"
+    }
+  },
+  "entrypoint": "client.py",
+  "example": "example_usage.py"
+}
